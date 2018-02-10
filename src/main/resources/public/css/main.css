@@ -116,3 +116,7 @@ ul.label {
 .photo-show:hover img {
     animation-play-state: paused;
 }
+
+.aka{
+color:red;
+}
