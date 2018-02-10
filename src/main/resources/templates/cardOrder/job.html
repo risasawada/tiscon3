@@ -29,23 +29,23 @@
                             <div class="ui statement">ご職業が「経営・自営業」、「会社員」、「契約・派遣社員」、「公務員」、「民間団体」、「その他（有職）」の方は、以下の項目をご入力ください。</div>
 
                             <div class="field" th:classappend="${form.hasErrors('employerName')} ? 'error'">
-                                <label>お勤め先名（例：○○株式会社）</label>
+                                <label><font color="red">※</font>お勤め先名（例：○○株式会社）</label>
                                 <input type="text" name="employerName" th:value="${form.employerName}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerZipCode')} ? 'error'">
-                                <label>お勤め先郵便番号（例：123-4567 ハイフン(-)不要）</label>
+                                <label><font color="red">※</font>お勤め先郵便番号（例：123-4567 ハイフン(-)不要）</label>
                                 <input type="text" name="employerZipCode" th:value="${form.employerZipCode}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerAddress')} ? 'error'">
-                                <label>お勤め先住所（例：東京都港区台場２－４－５）</label>
+                                <label><font color="red">※</font>お勤め先住所（例：東京都港区台場２－４－５）</label>
                                 <input type="text" name="employerAddress" th:value="${form.employerAddress}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber')} ? 'error'">
-                                <label>お勤め先電話番号（例：1234567890）</label>
+                                <label><font color="red">※</font>お勤め先電話番号（例：1234567890 ハイフン(-)不要 ）</label>
                                 <input type="text" name="employerPhoneNumber" th:value="${form.employerPhoneNumber}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
-                                <label>業種</label>
+                                <label><font color="red">※</font>業種</label>
                                 <select name="industryType">
                                     <option value="農林水鉱" th:checked="${form.industryType}=='農林水鉱'"/>農業・林業・水産業・鉱業</option>
                                 <option value="建築不動産" th:checked="${form.industryType}=='建築不動産'"/>建設・不動産業</option>
@@ -60,7 +60,7 @@
                                 </select>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('capital')} ? 'error'">
-                                <label>資本金</label>
+                                <label><font color="red">※</font>資本金</label>
                                 <select name="capital">
                                 <option value="999" th:checked="${form.capital}=='999'"/>１千万円未満</option>
                                 <option value="4999" th:checked="${form.capital}=='4999'"/>１千万円以上５千万円未満</option>
@@ -70,7 +70,7 @@
                                 </select>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('companySize')} ? 'error'">
-                                <label>お勤め先の規模（従業員数）</label>
+                                <label><font color="red">※</font>お勤め先の規模（従業員数）</label>
                                 <select name="companySize">
                                 <option value="9" th:checked="${form.companySize}=='9'"/>１０名未満</option>
                                 <option value="29" th:checked="${form.companySize}=='29'"/>１０名以上３０名未満</option>
@@ -81,15 +81,15 @@
                                 </select>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('department')} ? 'error'">
-                                <label>所属部署（例：アプリケーション部）</label>
+                                <label><font color="red">※</font>所属部署（例：アプリケーション部）</label>
                                 <input type="text" name="department" th:value="${form.department}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('position')} ? 'error'">
-                                <label>役職（例：部長）</label>
+                                <label><font color="red">※</font>役職（例：部長）</label>
                                 <input type="text" name="position" th:value="${form.position}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employeeLength')} ? 'error'">
-                                <label>勤続年数（半角のみ）</label>
+                                <label><font color="red">※</font>勤続年数（半角のみ）</label>
                                 <input type="text" class="number" name="employeeLength" th:value="${form.employeeLength}"/><span class="unit">年</span >
                             </div>
 
