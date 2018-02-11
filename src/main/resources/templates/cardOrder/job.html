@@ -66,8 +66,8 @@
                                 <input type="text" name="employerZipCode" th:value="${form.employerZipCode}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerAddress')} ? 'error'">
-                                <label><font color="red">※</font>お勤め先住所（例：東京都港区台場2-4-5 新ハートビル 17階）</label>
-                                <input type="text" name="employerAddress" th:value="${form.employerAddress}"/>
+                                <label ><font color="red">※</font>お勤め先住所（例：東京都港区台場2-4-5 新ハートビル 17階）</label>
+                                <inputtype="text" name="employerAddress" th:value="${form.employerAddress}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber')} ? 'error'">
                                 <label><font color="red">※</font>お勤め先電話番号（例：0123456789 ハイフン(-)不要 ）</label>
