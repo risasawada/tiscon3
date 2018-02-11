@@ -28,15 +28,15 @@
                             <div class="ui horizontal divider">ご本人について<br><font color="red">※</font>は必須入力項目です</div>
 
                             <div class="field" th:classappend="${form.hasErrors('kanjiName')} ? 'error'">
-                               <label> <font color="red">※</font>お名前（漢字）</label>
+                               <label> <font color="red">※</font>氏名（漢字）　　例：日本　太郎</label>
                                 <input type="text"  name="kanjiName"  th:value="${form.kanjiName}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('kanaName')} ? 'error'">
-                                <label> <font color="red">※</font>お名前（カナ）</label>
+                                <label> <font color="red">※</font>氏名（カナ）　　例:ニホン　タロウ</label>
                                 <input type="text" name="kanaName" th:value="${form.kanaName}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('alphabetName')} ? 'error'">
-                                <label> <font color="red">※</font>お名前（ローマ字）</label>
+                                <label> <font color="red">※</font>氏名（ローマ字）　　例:Nihon Tarou</label>
                                 <input type="text" name="alphabetName" th:value="${form.alphabetName}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('gender')} ? 'error'">
@@ -53,7 +53,7 @@
                                 <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('address')} ? 'error'">
-                                <label> <font color="red">※</font>ご住所　（例：東京都港区台場２－４－５）</label>
+                                <label> <font color="red">※</font>ご住所（例：東京都港区台場2-4-5　新ダイマンション103号室）</label>
                                 <input type="text" size="15"name="address" th:value="${form.address}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
@@ -61,7 +61,7 @@
                                 <input type="text" name="homePhoneNumber" th:value="${form.homePhoneNumber}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('mobilePhoneNumber')} ? 'error'">
-                                <label> <font color="red">※</font>携帯電話番号（例：0901234567 ハイフン(-)不要 ）</font></label>
+                                <label> <font color="red">※</font>携帯電話番号（例：09012345678 ハイフン(-)不要 ）</font></label>
                                 <input type="text" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('emailAddress')} ? 'error'">
@@ -77,15 +77,16 @@
                                 <label><font color="red">※</font>お住まい</label>
 
                                     <select name="houseClassification">
-                                    <option value="自己所有" th:checked="${form.houseClassification}=='自己所有'"/>本人名義の一戸建・マンション</option>
-                                    <option value="家族所有" th:checked="${form.houseClassification}=='家族所有'"/>家族名義の一戸建・マンション</option>
-                                    <option value="社宅" th:checked="${form.houseClassification}=='社宅'"/>社宅</option>
-                                    <option value="公営" th:checked="${form.houseClassification}=='公営'"/>公営住宅</option>
-                                    <option value="賃貸" th:checked="${form.houseClassification}=='賃貸'"/>賃貸マンション</option>
-                                    <option value="借家" th:checked="${form.houseClassification}=='借家'"/>借家</option>
-                                    <option value="アパート" th:checked="${form.houseClassification}=='アパート'"/>アパート</option>
-                                    <option value="寮下宿" th:checked="${form.houseClassification}=='寮下宿'"/>寮・下宿</option>
-                                    <option value="その他" th:checked="${form.houseClassification}=='その他'"/>その他</option>
+                                        <option value="選択してください"/>選択してください</option>
+                                    <option value="自己所有" th:checked="${form.houseClassification}=='自己所有'">本人名義の一戸建・マンション</option>
+                                    <option value="家族所有" th:checked="${form.houseClassification}=='家族所有'">家族名義の一戸建・マンション</option>
+                                    <option value="社宅" th:checked="${form.houseClassification}=='社宅'">社宅</option>
+                                    <option value="公営" th:checked="${form.houseClassification}=='公営'">公営住宅</option>
+                                    <option value="賃貸" th:checked="${form.houseClassification}=='賃貸'">賃貸マンション</option>
+                                    <option value="借家" th:checked="${form.houseClassification}=='借家'">借家</option>
+                                    <option value="アパート" th:checked="${form.houseClassification}=='アパート'">アパート</option>
+                                    <option value="寮下宿" th:checked="${form.houseClassification}=='寮下宿'">寮・下宿</option>
+                                    <option value="その他" th:checked="${form.houseClassification}=='その他'">その他</option>
                                 　　</select>
 
 
@@ -102,18 +103,20 @@
                                 <label><font color="red">※</font>ご職業</label>
 
                                     <select name="job">
-                                <option value="経営自営" th:checked="${form.job}=='経営自営'"/>経営・自営業</option>
-                                <option value="会社員" th:checked="${form.job}=='会社員'"/>会社員</option>
-                                <option value="契約派遣" th:checked="${form.job}=='契約派遣'"/>契約・派遣社員</option>
-                                <option value="公務員" th:checked="${form.job}=='公務員'"/>公務員</option>
-                                <option value="民間団体" th:checked="${form.job}=='民間団体'"/>民間団体</option>
-                                <option value="主婦" th:checked="${form.job}=='主婦'"/>主婦</option>
-                                <option value="学生" th:checked="${form.job}=='学生'"/>学生</option>
-                                <option value="年金受給" th:checked="${form.job}=='年金受給'"/>年金受給者の方</option>
-                                <option value="パートアルバイト" th:checked="${form.job}=='パートアルバイト'"/>パート・アルバイト</option>
-                                <option value="他有職" th:checked="${form.job}=='他有職'"/>その他 (有職）</option>
-                                <option value="他無職" th:checked="${form.job}=='他無職'"/>その他（無職）</option>
+                                <option value="選択してください"/>選択してください</option>
+                                <option value="経営自営" th:checked="${form.job}=='経営自営'">経営・自営業</option>
+                                <option value="会社員" th:checked="${form.job}=='会社員'">会社員</option>
+                                <option value="契約派遣" th:checked="${form.job}=='契約派遣'">契約・派遣社員</option>
+                                <option value="公務員" th:checked="${form.job}=='公務員'">公務員</option>
+                                <option value="民間団体" th:checked="${form.job}=='民間団体'">民間団体</option>
+                                <option value="主婦" th:checked="${form.job}=='主婦'">主婦</option>
+                                <option value="学生" th:checked="${form.job}=='学生'">学生</option>
+                                <option value="年金受給" th:checked="${form.job}=='年金受給'">年金受給者の方</option>
+                                <option value="パートアルバイト" th:checked="${form.job}=='パートアルバイト'">パート・アルバイト</option>
+                                <option value="他有職" th:checked="${form.job}=='他有職'">その他 (有職）</option>
+                                <option value="他無職" th:checked="${form.job}=='他無職'">その他（無職）</option>
                                     </select>
+                                <label><font color="red">ご職業が「経営・自営業」、「会社員」、「契約・派遣社員」、「公務員」、「民間団体」、「その他（有職）」の方のみ、次ページの項目をご入力ください。</font></label>
                             </div>
 
                             <!--/*"お勤め先"の入力値を引き回すための隠し項目*/-->
