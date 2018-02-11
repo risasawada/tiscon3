@@ -21,8 +21,50 @@
                         <form class="ui form" method="post" action="/cardOrder/user">
 
                             <!-- /*エラーがあれば表示する*/ -->
-                            <ul class="ui red basic label" th:if="${form.hasErrors()}">
-                                <li th:each="error : ${form.getErrors().entrySet()}" th:text="${error.value}"></li>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('kanjiName')}">
+                                <li  th:text="'氏名（漢字）は'+${form.getErrors('kanjiName')}"></li>
+                            </ul>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('kanaName')}">
+                                <li  th:text="'氏名（カナ）は'+${form.getErrors('kanaName')}"></li>
+                            </ul>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('alphabetName')}">
+                                <li  th:text="'氏名（ローマ字）は'+${form.getErrors('alphabetName')}"></li>
+                            </ul>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('gender')}">
+                                <li  th:text="'性別は'+${form.getErrors('gender')}"></li>
+                            </ul>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('dateOfBirth')}">
+                                <li  th:text="'生年月日は'+${form.getErrors('dateOfBirth')}"></li>
+                            </ul>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('zipCode')}">
+                                <li  th:text="'郵便番号は'+${form.getErrors('zipCode')}"></li>
+                            </ul>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('address')}">
+                                <li  th:text="'ご住所は'+${form.getErrors('address')}"></li>
+                            </ul>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('homePhoneNumber')}">
+                                <li  th:text="'自宅電話番号は'+${form.getErrors('homePhoneNumber')}"></li>
+                            </ul>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('mobilePhoneNumber')}">
+                                <li  th:text="'携帯電話番号は'+${form.getErrors('mobilePhoneNumber')}"></li>
+                            </ul>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('emailAddress')}">
+                                <li  th:text="'メールアドレスは'+${form.getErrors('emailAddress')}"></li>
+                            </ul>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('spouse')}">
+                                <li  th:text="'配偶者有無は'+${form.getErrors('spouse')}"></li>
+                            </ul>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('houseClassification')}">
+                                <li  th:text="'お住まいは'+${form.getErrors('houseClassification')}"></li>
+                            </ul>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('debt')}">
+                                <li  th:text="'ローン等のお借入れ金額は'+${form.getErrors('debt')}"></li>
+                            </ul>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('income')}">
+                                <li  th:text="'昨年の所得は'+${form.getErrors('income')}"></li>
+                            </ul>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('job')}">
+                                <li  th:text="'ご職業は'+${form.getErrors('job')}"></li>
                             </ul>
 
                             <div class="ui horizontal divider">ご本人について<br><font color="red">※</font>は必須入力項目です。入力は１分程度で完了します。</div>
