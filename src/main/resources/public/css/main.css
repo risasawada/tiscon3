@@ -46,13 +46,23 @@ ul.label {
 
 .field {
     text-align: left;
+    /*width:250px;*/
 }
 
 .number {
-    text-align: right;
+    text-align: left;
     vertical-align: middle !important;
-    width: 100px !important;
+    width: 200px !important;
+    float:left;
 }
+
+.number1{
+    text-align: left;
+    vertical-align: middle !important;
+    width: 120px !important;
+
+}
+
 
 .unit {
     vertical-align: middle;
@@ -117,6 +127,10 @@ ul.label {
     animation-play-state: paused;
 }
 
-.aka{
-color:red;
+input {
+text-align: left;
+}
+
+.aaaa {
+float:left;
 }
